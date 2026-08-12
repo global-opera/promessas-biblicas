@@ -2,7 +2,7 @@
 
 Aplicativo bíblico interativo com as promessas de Deus organizadas em 35 categorias temáticas.
 
-🔗 **[Acessar aplicativo](https://scassani1964.github.io/promessas-biblicas/)**
+🔗 **[Acessar aplicativo](https://global-opera.github.io/promessas-biblicas/)**
 
 ## 📖 Sobre
 
@@ -84,8 +84,8 @@ Este aplicativo permite descobrir facilmente as promessas de Deus na Bíblia par
 
 ## 🌐 Versões Disponíveis
 
-- **Versão em português**: [promessas-biblicas](https://scassani1964.github.io/promessas-biblicas/)
-- **Version française**: [promesses-bibliques](https://scassani1964.github.io/promesses-bibliques/)
+- **Versão em português**: [promessas-biblicas](https://global-opera.github.io/promessas-biblicas/)
+- **Version française**: [promesses-bibliques](https://global-opera.github.io/promesses-bibliques/)
 
 ## 📧 Contato
 
