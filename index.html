@@ -1,251 +1,1335 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="As promessas de Deus para cada situação da vida: 35 temas, 113 versículos, texto da Bíblia Livre.">
-<title>Promessas de Deus</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;
- background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);
- min-height:100vh;color:#333;line-height:1.6}
-.container{max-width:1100px;margin:0 auto;padding:30px 20px 60px}
-header{text-align:center;color:#fff;margin-bottom:30px}
-h1{font-size:2.6rem;margin-bottom:10px;text-wrap:balance}
-header p{font-size:1.1rem;opacity:.92}
-header .compte{font-size:.95rem;opacity:.78;margin-top:8px;font-variant-numeric:tabular-nums}
-.carte{background:#fff;border-radius:16px;padding:26px 28px;margin-bottom:22px;
- box-shadow:0 8px 28px rgba(0,0,0,.16)}
-.carte h2{font-size:1.15rem;color:#764ba2;margin-bottom:8px}
-.carte p{color:#555;font-size:.98rem}
-.carte a{color:#667eea}
-.section{background:#fff;border-radius:16px;padding:26px 28px;margin-bottom:22px;
- box-shadow:0 8px 28px rgba(0,0,0,.16)}
-.section-header{display:flex;align-items:center;gap:12px;border-bottom:2px solid #f0f0f5;
- padding-bottom:14px;margin-bottom:20px}
-.section-icon{font-size:1.5rem}
-.section-title{font-size:1.25rem;color:#764ba2}
-.grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:16px}
-.theme{background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:#fff;border:0;
- border-radius:12px;padding:20px 18px;text-align:left;cursor:pointer;font:inherit;
- transition:transform .2s,box-shadow .2s}
-.theme:hover{transform:translateY(-4px);box-shadow:0 10px 24px rgba(118,75,162,.4)}
-.theme-icon{font-size:1.8rem;display:block;margin-bottom:10px}
-.theme-title{display:block;font-weight:600;font-size:1rem;margin-bottom:4px}
-.theme-sub{display:block;font-size:.85rem;opacity:.85}
-.detail{display:none}
-.detail.on{display:block}
-.vue.off{display:none}
-.retour{background:#fff;color:#764ba2;border:0;border-radius:10px;padding:11px 22px;
- font:inherit;font-weight:600;cursor:pointer;margin-bottom:20px;
- box-shadow:0 4px 14px rgba(0,0,0,.18)}
-.retour:hover{background:#f3f0fa}
-.verset{background:#f8f9fa;border-left:4px solid #667eea;border-radius:8px;
- padding:18px 20px;margin-bottom:14px}
-.verset .ref{color:#764ba2;font-weight:600;margin-bottom:6px}
-.verset .txt{color:#333}
-.source{color:#999;font-size:.88rem;margin-top:18px}
-.verset{cursor:pointer}
-.verset:hover{background:#f0eefb}
-.modale{position:fixed;inset:0;background:rgba(40,25,70,.86);display:none;
- align-items:center;justify-content:center;padding:24px;z-index:10}
-.modale.on{display:flex}
-.modale-boite{background:#fff;border-radius:16px;padding:34px 32px;max-width:640px;
- width:100%;max-height:82vh;overflow:auto;position:relative}
-.modale-ref{color:#764ba2;font-weight:600;font-size:1.1rem;margin-bottom:14px}
-.modale-txt{font-size:1.25rem;line-height:1.75}
-.modale-fermer{position:absolute;top:12px;right:14px;border:0;background:none;
- font-size:1.6rem;line-height:1;color:#999;cursor:pointer}
-.modale-fermer:hover{color:#764ba2}
-.haut{position:fixed;right:24px;bottom:24px;width:46px;height:46px;border:0;
- border-radius:50%;background:#fff;color:#764ba2;font-size:1.2rem;cursor:pointer;
- box-shadow:0 6px 18px rgba(0,0,0,.25);opacity:0;pointer-events:none;
- transition:opacity .25s}
-.haut.on{opacity:1;pointer-events:auto}
-footer{text-align:center;color:#fff;opacity:.8;font-size:.9rem;margin-top:10px}
-button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:3px}
-@media (prefers-reduced-motion:reduce){.theme,.haut{transition:none}
- .theme:hover{transform:none}}
-@media (max-width:600px){.container{padding:20px 14px 50px}h1{font-size:2rem}
- .section,.carte{padding:20px 18px}.grille{grid-template-columns:1fr}}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✝️ Promessas de Deus</title>
+    <meta name="description" content="Aplicativo bíblico interativo com 35 categorias e 113 versículos das promessas de Deus. Versão em português — Bíblia Livre, CC BY 3.0 BR.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 2rem;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem;
+        }
+        
+        header {
+            text-align: center;
+            color: white;
+            padding: 2rem 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+        
+        .section {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #667eea;
+        }
+        
+        .section-icon {
+            font-size: 2rem;
+        }
+        
+        .section-title {
+            font-size: 1.5rem;
+            color: #667eea;
+            font-weight: 600;
+        }
+        
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 1rem;
+        }
+        
+        .category-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        .category-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .category-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+        
+        .category-subtitle {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .detail-view {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+        }
+        
+        .back-button {
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-bottom: 1.5rem;
+            transition: background 0.2s;
+        }
+        
+        .back-button:hover {
+            background: #764ba2;
+        }
+        
+        .promise-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            border-left: 4px solid #667eea;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .promise-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        
+        .promise-reference {
+            font-weight: 600;
+            color: #667eea;
+            margin-bottom: 0.5rem;
+        }
+        
+        .promise-text {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 1000;
+            padding: 1rem;
+        }
+        
+        .modal-content {
+            background: white;
+            max-width: 600px;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 15px;
+            position: relative;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+        }
+        
+        .modal-reference {
+            font-size: 1.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+        
+        .modal-verse {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+        
+        /* BOUTON FLOTTANT DE RETOUR EN HAUT */
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #667eea;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            transition: all 0.3s;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+        }
+        
+        .scroll-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-to-top:hover {
+            background: #764ba2;
+            transform: translateY(-5px);
+            box-shadow: 0 6px 25px rgba(0,0,0,0.4);
+        }
+        
+        .hidden {
+            display: none !important;
+        }
+        
+        footer {
+            text-align: center;
+            color: white;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .scroll-to-top {
+                width: 50px;
+                height: 50px;
+                bottom: 20px;
+                right: 20px;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<div class="container">
-
-<header id="top">
-  <h1>Promessas de Deus</h1>
-  <p>As promessas de Deus para cada situação da sua vida</p>
-  <p class="compte">7 seções · 35 temas · 113 versículos</p>
-</header>
-
-<div class="carte">
-  <h2>Como usar</h2>
-  <p>Escolha um tema: os versículos correspondentes aparecem, com a sua referência. Nada para instalar, nada para informar.</p>
-</div>
-
-<div id="themes" class="vue">
-  <div class="section">
-    <div class="section-header"><span class="section-icon">🛡️</span><h2 class="section-title">Seção 1: Salvação e Relacionamento com Deus</h2></div>
-    <div class="grille">
-      <button class="theme" data-n="1"><span class="theme-icon">✝️</span><span class="theme-title">1. Salvação e Redenção</span><span class="theme-sub">Vida eterna pela fé</span></button>
-      <button class="theme" data-n="2"><span class="theme-icon">❤️</span><span class="theme-title">2. Amor de Deus</span><span class="theme-sub">Amor incondicional do Pai</span></button>
-      <button class="theme" data-n="3"><span class="theme-icon">🕊️</span><span class="theme-title">3. Espírito Santo</span><span class="theme-sub">Presença e poder divino</span></button>
-      <button class="theme" data-n="4"><span class="theme-icon">🙏</span><span class="theme-title">4. Oração</span><span class="theme-sub">Comunicação com Deus</span></button>
-      <button class="theme" data-n="5"><span class="theme-icon">😊</span><span class="theme-title">5. Alegria</span><span class="theme-sub">Alegria do Senhor</span></button>
+    <div class="container">
+        <header id="top">
+            <h1>✝️ Promessas de Deus</h1>
+            <p>Descubra as promessas divinas para cada situação da sua vida</p>
+        </header>
+        
+        <div id="mainView">
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">🛡️</span>
+                    <h2 class="section-title">Seção 1: Salvação e Relacionamento com Deus</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory(1)">
+                        <div class="category-icon">✝️</div>
+                        <div class="category-title">1. Salvação e Redenção</div>
+                        <div class="category-subtitle">Vida eterna pela fé</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(2)">
+                        <div class="category-icon">❤️</div>
+                        <div class="category-title">2. Amor de Deus</div>
+                        <div class="category-subtitle">Amor incondicional do Pai</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(3)">
+                        <div class="category-icon">🕊️</div>
+                        <div class="category-title">3. Espírito Santo</div>
+                        <div class="category-subtitle">Presença e poder divino</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(4)">
+                        <div class="category-icon">🙏</div>
+                        <div class="category-title">4. Oração</div>
+                        <div class="category-subtitle">Comunicação com Deus</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(5)">
+                        <div class="category-icon">😊</div>
+                        <div class="category-title">5. Alegria</div>
+                        <div class="category-subtitle">Alegria do Senhor</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">🛡️</span>
+                    <h2 class="section-title">Seção 2: Proteção e Provisão</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory(6)">
+                        <div class="category-icon">🛡️</div>
+                        <div class="category-title">6. Proteção</div>
+                        <div class="category-subtitle">Deus como escudo</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(7)">
+                        <div class="category-icon">🏠</div>
+                        <div class="category-title">7. Refúgio</div>
+                        <div class="category-subtitle">Abrigo na tempestade</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(8)">
+                        <div class="category-icon">🍞</div>
+                        <div class="category-title">8. Provisão</div>
+                        <div class="category-subtitle">Necessidades diárias supridas</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(9)">
+                        <div class="category-icon">💰</div>
+                        <div class="category-title">9. Prosperidade</div>
+                        <div class="category-subtitle">Bênçãos materiais</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(10)">
+                        <div class="category-icon">💪</div>
+                        <div class="category-title">10. Força</div>
+                        <div class="category-subtitle">Força na fraqueza</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">💪</span>
+                    <h2 class="section-title">Seção 3: Força e Vitória</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory(11)">
+                        <div class="category-icon">🏆</div>
+                        <div class="category-title">11. Vitória</div>
+                        <div class="category-subtitle">Triunfo sobre a adversidade</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(12)">
+                        <div class="category-icon">⚔️</div>
+                        <div class="category-title">12. Batalha espiritual</div>
+                        <div class="category-subtitle">Armas espirituais</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(13)">
+                        <div class="category-icon">😰</div>
+                        <div class="category-title">13. Ansiedade e medo</div>
+                        <div class="category-subtitle">Paz na angústia</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(14)">
+                        <div class="category-icon">😢</div>
+                        <div class="category-title">14. Tristeza e luto</div>
+                        <div class="category-subtitle">Consolo divino</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(15)">
+                        <div class="category-icon">🌟</div>
+                        <div class="category-title">15. Esperança</div>
+                        <div class="category-subtitle">Espera confiante</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">📖</span>
+                    <h2 class="section-title">Seção 4: Palavra e Sabedoria</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory(16)">
+                        <div class="category-icon">📖</div>
+                        <div class="category-title">16. Palavra de Deus</div>
+                        <div class="category-subtitle">Luz e verdade</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(17)">
+                        <div class="category-icon">🧠</div>
+                        <div class="category-title">17. Sabedoria</div>
+                        <div class="category-subtitle">Entendimento divino</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(18)">
+                        <div class="category-icon">🎯</div>
+                        <div class="category-title">18. Direção</div>
+                        <div class="category-subtitle">Direção nas escolhas</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(19)">
+                        <div class="category-icon">✅</div>
+                        <div class="category-title">19. Obediência</div>
+                        <div class="category-subtitle">Bênçãos da obediência</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(20)">
+                        <div class="category-icon">🎓</div>
+                        <div class="category-title">20. Conhecimento</div>
+                        <div class="category-subtitle">Revelação divina</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">👨‍👩‍👧‍👦</span>
+                    <h2 class="section-title">Seção 5: Vida Prática e Família</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory(21)">
+                        <div class="category-icon">👨‍👩‍👧‍👦</div>
+                        <div class="category-title">21. Família</div>
+                        <div class="category-subtitle">Bênção familiar</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(22)">
+                        <div class="category-icon">👶</div>
+                        <div class="category-title">22. Filhos</div>
+                        <div class="category-subtitle">Herança do Senhor</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(23)">
+                        <div class="category-icon">💕</div>
+                        <div class="category-title">23. Casamento</div>
+                        <div class="category-subtitle">União abençoada</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(24)">
+                        <div class="category-icon">💼</div>
+                        <div class="category-title">24. Trabalho</div>
+                        <div class="category-subtitle">Fruto do trabalho</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(25)">
+                        <div class="category-icon">🏥</div>
+                        <div class="category-title">25. Cura</div>
+                        <div class="category-subtitle">Saúde e restauração</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">☮️</span>
+                    <h2 class="section-title">Seção 6: Paz e Perseverança</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory(26)">
+                        <div class="category-icon">☮️</div>
+                        <div class="category-title">26. Paz</div>
+                        <div class="category-subtitle">Tranquilidade da alma</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(27)">
+                        <div class="category-icon">💬</div>
+                        <div class="category-title">27. Perdão</div>
+                        <div class="category-subtitle">Misericórdia divina</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(28)">
+                        <div class="category-icon">🏃</div>
+                        <div class="category-title">28. Perseverança</div>
+                        <div class="category-subtitle">Correr até o fim</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(29)">
+                        <div class="category-icon">😇</div>
+                        <div class="category-title">29. Santidade</div>
+                        <div class="category-subtitle">Vida consagrada</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(30)">
+                        <div class="category-icon">⏰</div>
+                        <div class="category-title">30. Paciência</div>
+                        <div class="category-subtitle">Esperar em Deus</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">👑</span>
+                    <h2 class="section-title">Seção 7: Volta de Cristo e Eternidade</h2>
+                </div>
+                <div class="categories-grid">
+                    <div class="category-card" onclick="showCategory(31)">
+                        <div class="category-icon">👑</div>
+                        <div class="category-title">31. Volta de Cristo</div>
+                        <div class="category-subtitle">Segunda vinda gloriosa</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(32)">
+                        <div class="category-icon">🌍</div>
+                        <div class="category-title">32. Novos céus e terra</div>
+                        <div class="category-subtitle">Criação renovada</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(33)">
+                        <div class="category-icon">👼</div>
+                        <div class="category-title">33. Ressurreição</div>
+                        <div class="category-subtitle">Corpo glorificado</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(34)">
+                        <div class="category-icon">😌</div>
+                        <div class="category-title">34. Fim do sofrimento</div>
+                        <div class="category-subtitle">Sem dor nem lágrimas</div>
+                    </div>
+                    <div class="category-card" onclick="showCategory(35)">
+                        <div class="category-icon">🏰</div>
+                        <div class="category-title">35. Morada eterna</div>
+                        <div class="category-subtitle">Casa do Pai</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="detailView" class="hidden detail-view">
+            <button class="back-button" onclick="showMainView()">← Voltar às categorias</button>
+            <h2 id="detailTitle"></h2>
+            <div id="promisesList"></div>
+            <button class="back-button" onclick="showMainView()">← Voltar às categorias</button>
+        </div>
+        
+        <footer>
+            <p style="font-size: 1.2rem; margin-bottom: 0.5rem;">✝️ Promesses de Dieu</p>
+            <p style="opacity: 0.9;">35 categorias • 113 versículos bíblicos</p>
+            <p style="margin-top: 1rem; opacity: 0.8;">Versão em português — Bíblia Livre, CC BY 3.0 BR</p>
+            <p style="margin-top: 0.5rem;">Uma ferramenta da <strong>Mania Libris</strong></p>
+        </footer>
     </div>
-  </div>
-  <div class="section">
-    <div class="section-header"><span class="section-icon">🛡️</span><h2 class="section-title">Seção 2: Proteção e Provisão</h2></div>
-    <div class="grille">
-      <button class="theme" data-n="6"><span class="theme-icon">🛡️</span><span class="theme-title">6. Proteção</span><span class="theme-sub">Deus como escudo</span></button>
-      <button class="theme" data-n="7"><span class="theme-icon">🏠</span><span class="theme-title">7. Refúgio</span><span class="theme-sub">Abrigo na tempestade</span></button>
-      <button class="theme" data-n="8"><span class="theme-icon">🍞</span><span class="theme-title">8. Provisão</span><span class="theme-sub">Necessidades diárias supridas</span></button>
-      <button class="theme" data-n="9"><span class="theme-icon">💰</span><span class="theme-title">9. Prosperidade</span><span class="theme-sub">Bênçãos materiais</span></button>
-      <button class="theme" data-n="10"><span class="theme-icon">💪</span><span class="theme-title">10. Força</span><span class="theme-sub">Força na fraqueza</span></button>
+    
+    <!-- BOUTON FLOTTANT DE RETOUR EN HAUT -->
+    <div class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">
+        ↑
     </div>
-  </div>
-  <div class="section">
-    <div class="section-header"><span class="section-icon">💪</span><h2 class="section-title">Seção 3: Força e Vitória</h2></div>
-    <div class="grille">
-      <button class="theme" data-n="11"><span class="theme-icon">🏆</span><span class="theme-title">11. Vitória</span><span class="theme-sub">Triunfo sobre a adversidade</span></button>
-      <button class="theme" data-n="12"><span class="theme-icon">⚔️</span><span class="theme-title">12. Batalha espiritual</span><span class="theme-sub">Armas espirituais</span></button>
-      <button class="theme" data-n="13"><span class="theme-icon">😰</span><span class="theme-title">13. Ansiedade e medo</span><span class="theme-sub">Paz na angústia</span></button>
-      <button class="theme" data-n="14"><span class="theme-icon">😢</span><span class="theme-title">14. Tristeza e luto</span><span class="theme-sub">Consolo divino</span></button>
-      <button class="theme" data-n="15"><span class="theme-icon">🌟</span><span class="theme-title">15. Esperança</span><span class="theme-sub">Espera confiante</span></button>
+    
+    <div id="modal" class="modal" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-reference" id="modalReference"></div>
+            <div class="modal-verse" id="modalVerse"></div>
+        </div>
     </div>
-  </div>
-  <div class="section">
-    <div class="section-header"><span class="section-icon">📖</span><h2 class="section-title">Seção 4: Palavra e Sabedoria</h2></div>
-    <div class="grille">
-      <button class="theme" data-n="16"><span class="theme-icon">📖</span><span class="theme-title">16. Palavra de Deus</span><span class="theme-sub">Luz e verdade</span></button>
-      <button class="theme" data-n="17"><span class="theme-icon">🧠</span><span class="theme-title">17. Sabedoria</span><span class="theme-sub">Entendimento divino</span></button>
-      <button class="theme" data-n="18"><span class="theme-icon">🎯</span><span class="theme-title">18. Direção</span><span class="theme-sub">Direção nas escolhas</span></button>
-      <button class="theme" data-n="19"><span class="theme-icon">✅</span><span class="theme-title">19. Obediência</span><span class="theme-sub">Bênçãos da obediência</span></button>
-      <button class="theme" data-n="20"><span class="theme-icon">🎓</span><span class="theme-title">20. Conhecimento</span><span class="theme-sub">Revelação divina</span></button>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-header"><span class="section-icon">👨‍👩‍👧‍👦</span><h2 class="section-title">Seção 5: Vida Prática e Família</h2></div>
-    <div class="grille">
-      <button class="theme" data-n="21"><span class="theme-icon">👨‍👩‍👧‍👦</span><span class="theme-title">21. Família</span><span class="theme-sub">Bênção familiar</span></button>
-      <button class="theme" data-n="22"><span class="theme-icon">👶</span><span class="theme-title">22. Filhos</span><span class="theme-sub">Herança do Senhor</span></button>
-      <button class="theme" data-n="23"><span class="theme-icon">💕</span><span class="theme-title">23. Casamento</span><span class="theme-sub">União abençoada</span></button>
-      <button class="theme" data-n="24"><span class="theme-icon">💼</span><span class="theme-title">24. Trabalho</span><span class="theme-sub">Fruto do trabalho</span></button>
-      <button class="theme" data-n="25"><span class="theme-icon">🏥</span><span class="theme-title">25. Cura</span><span class="theme-sub">Saúde e restauração</span></button>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-header"><span class="section-icon">☮️</span><h2 class="section-title">Seção 6: Paz e Perseverança</h2></div>
-    <div class="grille">
-      <button class="theme" data-n="26"><span class="theme-icon">☮️</span><span class="theme-title">26. Paz</span><span class="theme-sub">Tranquilidade da alma</span></button>
-      <button class="theme" data-n="27"><span class="theme-icon">💬</span><span class="theme-title">27. Perdão</span><span class="theme-sub">Misericórdia divina</span></button>
-      <button class="theme" data-n="28"><span class="theme-icon">🏃</span><span class="theme-title">28. Perseverança</span><span class="theme-sub">Correr até o fim</span></button>
-      <button class="theme" data-n="29"><span class="theme-icon">😇</span><span class="theme-title">29. Santidade</span><span class="theme-sub">Vida consagrada</span></button>
-      <button class="theme" data-n="30"><span class="theme-icon">⏰</span><span class="theme-title">30. Paciência</span><span class="theme-sub">Esperar em Deus</span></button>
-    </div>
-  </div>
-  <div class="section">
-    <div class="section-header"><span class="section-icon">👑</span><h2 class="section-title">Seção 7: Volta de Cristo e Eternidade</h2></div>
-    <div class="grille">
-      <button class="theme" data-n="31"><span class="theme-icon">👑</span><span class="theme-title">31. Volta de Cristo</span><span class="theme-sub">Segunda vinda gloriosa</span></button>
-      <button class="theme" data-n="32"><span class="theme-icon">🌍</span><span class="theme-title">32. Novos céus e terra</span><span class="theme-sub">Criação renovada</span></button>
-      <button class="theme" data-n="33"><span class="theme-icon">👼</span><span class="theme-title">33. Ressurreição</span><span class="theme-sub">Corpo glorificado</span></button>
-      <button class="theme" data-n="34"><span class="theme-icon">😌</span><span class="theme-title">34. Fim do sofrimento</span><span class="theme-sub">Sem dor nem lágrimas</span></button>
-      <button class="theme" data-n="35"><span class="theme-icon">🏰</span><span class="theme-title">35. Morada eterna</span><span class="theme-sub">Casa do Pai</span></button>
-    </div>
-  </div>
-</div>
+    
+    <script>
+// Données des promesses bibliques - Versão em português — Bíblia Livre, CC BY 3.0 BR
+const promessesData = {
+    1: {
+        title: "1. Salvação e Redenção",
+        icon: "✝️",
+        promises: [
+            {
+                reference: "João 3:16",
+                text: "Porque Deus amou ao mundo de tal maneira, que deu o seu Filho unigênito; para que todo aquele que nele crê não pereça, mas tenha a vida eterna."
+            },
+            {
+                reference: "Romanos 10:9",
+                text: "Pois, se com a tua boca declarares que Jesus é Senhor, e em teu coração creres que Deus o ressuscitou dos mortos, serás salvo."
+            },
+            {
+                reference: "Atos 16:31",
+                text: "E eles lhe disseram: Crê no Senhor Jesus Cristo, e serás salvo, tu e a tua casa."
+            },
+            {
+                reference: "Efésios 2:8-9",
+                text: "Porque pela graça sois salvos, por meio da fé; e isto não vem de vós; é dom de Deus; não por obras, para que ninguém tenha orgulho de si mesmo."
+            }
+        ]
+    },
+    2: {
+        title: "2. Amor de Deus",
+        icon: "❤️",
+        promises: [
+            {
+                reference: "Romanos 8:38-39",
+                text: "Pois tenho certeza que nem a morte, nem a vida, nem anjos, nem principados, nem o presente, nem o futuro, nem poderes, nem altura, nem profundeza, nem qualquer outra criatura poderá nos separar do amor de Deus, que está em Cristo Jesus, nosso Senhor."
+            },
+            {
+                reference: "1 João 4:16",
+                text: "E nós conhecemos e cremos no amor que Deus tem por nós. Deus é amor, e quem está no amor está em Deus, e Deus habita nele."
+            },
+            {
+                reference: "Jeremias 31:3",
+                text: "O SENHOR apareceu a mim já há muito tempo, dizendo: Com amor eterno eu tenho te amado; por isso com bondade te sustento."
+            },
+            {
+                reference: "Salmos 103:11",
+                text: "Porque, assim como os céus estão bem mais elevados que a terra, assim também prevalece a bondade dele sobre aqueles que o temem."
+            }
+        ]
+    },
+    3: {
+        title: "3. Espírito Santo",
+        icon: "🕊️",
+        promises: [
+            {
+                reference: "Atos 1:8",
+                text: "Mas vós recebereis poder do Espírito Santo, que virá sobre vós; e vós sereis minhas testemunhas, tanto em Jerusalém como em toda a Judeia, e Samaria, e até ao último lugar da terra."
+            },
+            {
+                reference: "João 14:16-17",
+                text: "E eu rogarei ao Pai, e ele vos dará outro Consolador, para que fique sempre convosco; Ao Espírito de verdade, a quem o mundo não pode receber; porque não o vê, nem o conhece; mas vós o conheceis, porque habita convosco, e estará em vós."
+            },
+            {
+                reference: "Romanos 8:26",
+                text: "E da mesma maneira também o Espírito ajuda em nossas fraquezas. Pois não sabemos orar como se deve, mas o próprio Espírito intercede por nós com gemidos inexprimíveis."
+            }
+        ]
+    },
+    4: {
+        title: "4. Oração",
+        icon: "🙏",
+        promises: [
+            {
+                reference: "Mateus 7:7",
+                text: "Pedi, e vos será dado; buscai, e achareis; batei, e vos será aberto;"
+            },
+            {
+                reference: "1 João 5:14",
+                text: "E esta é a confiança que diante dele: que se pedirmos alguma coisa conforme a sua vontade, ele nos ouve."
+            },
+            {
+                reference: "Filipenses 4:6",
+                text: "Não estejais ansiosos por coisa alguma; mas em tudo, por meio de orações e súplicas com ações de gratidão, sejam os vossos pedidos conhecidos por Deus;"
+            },
+            {
+                reference: "Tiago 5:16",
+                text: "Confessai as vossas culpas uns aos outros, e orai uns pelos outros, para que sejais curados. A oração de um justo muito pode efetuar."
+            }
+        ]
+    },
+    5: {
+        title: "5. Alegria",
+        icon: "😊",
+        promises: [
+            {
+                reference: "Neemias 8:10",
+                text: "E disse-lhes mais: Ide, comei gorduras, e bebei doçuras, e enviai porções aos que não têm preparado; porque este é um dia consagrado ao nosso Senhor; portanto não vos entristeçais, porque a alegria do SENHOR é vossa força."
+            },
+            {
+                reference: "João 16:24",
+                text: "Até agora nada pedistes em meu nome; pedi, e recebereis, para que vossa alegria seja completa."
+            },
+            {
+                reference: "Salmos 16:11",
+                text: "Tu me farás conhecer o caminho da vida; fartura de alegrias há em tua presença; agrados estão em tua mão direita para sempre."
+            }
+        ]
+    },
+    6: {
+        title: "6. Proteção",
+        icon: "🛡️",
+        promises: [
+            {
+                reference: "Salmos 91:11",
+                text: "Porque ele ordenou aos anjos quanto a ti, para que guardem todos os teus caminhos."
+            },
+            {
+                reference: "Provérbios 18:10",
+                text: "O nome do SENHOR é uma torre forte; o justo correrá até ele, e ficará seguro."
+            },
+            {
+                reference: "Salmos 121:7-8",
+                text: "O SENHOR te guardará de todo mal; ele guardará a tua alma. O SENHOR guardará tua saída e tua entrada, desde agora e para sempre."
+            },
+            {
+                reference: "2 Tessalonicenses 3:3",
+                text: "Mas fiel é o Senhor, que vos fortalecerá e vos guardará do maligno."
+            }
+        ]
+    },
+    7: {
+        title: "7. Refúgio",
+        icon: "🏠",
+        promises: [
+            {
+                reference: "Salmos 46:2",
+                text: "Por isso não temeremos, ainda que a terra se mova, e ainda que as montanhas passem ao interior dos mares;Ainda que suas águas rujam e se perturbem, e as montanhas tremam por sua braveza. (Selá)"
+            },
+            {
+                reference: "Salmos 91:1-2",
+                text: "Aquele que mora no esconderijo do Altíssimo, à sombra do Todo-Poderoso habitará. Direi ao SENHOR: Tu és meu refúgio e minha fortaleza; Deus meu, em quem confio."
+            },
+            {
+                reference: "Naum 1:7",
+                text: "O SENHOR é bom, é fortaleza no dia da angústia; ele conhece os que nele confiam."
+            }
+        ]
+    },
+    8: {
+        title: "8. Provisão",
+        icon: "🍞",
+        promises: [
+            {
+                reference: "Filipenses 4:19",
+                text: "E meu Deus suprirá todas a vossas necessidades segundo as suas riquezas em glória em Cristo Jesus."
+            },
+            {
+                reference: "Mateus 6:33",
+                text: "Mas buscai primeiramente o seu Reino e a sua justiça, e todas estas coisas vos serão acrescentadas."
+            },
+            {
+                reference: "Salmos 37:25",
+                text: "Eu já fui jovem, e já envelheci; mas nunca vi o justo desamparado, nem a sua semente a pedir pão."
+            },
+            {
+                reference: "Salmos 23:1",
+                text: "O SENHOR é meu pastor, nada me faltará."
+            }
+        ]
+    },
+    9: {
+        title: "9. Prosperidade",
+        icon: "💰",
+        promises: [
+            {
+                reference: "3 João 1:2",
+                text: "Amado, eu desejo que estejas bem em todas as coisas, e que tenhas saúde, assim como bem está a tua alma."
+            },
+            {
+                reference: "Malaquias 3:10",
+                text: "Trazei todos os dízimos à casa do tesouro, para que haja alimento em minha casa; e provai-me nisto, diz o SENHOR dos exércitos, se não vos abrir as janelas dos céu, e derramar sobre vós bênção transbordante."
+            },
+            {
+                reference: "Provérbios 3:9-10",
+                text: "Honra ao SENHOR com teus bens, e com a primeira parte de toda a tua renda. E teus celeiros se encherão de fartura, e teus tanques transbordarão de vinho novo."
+            }
+        ]
+    },
+    10: {
+        title: "10. Força",
+        icon: "💪",
+        promises: [
+            {
+                reference: "Filipenses 4:13",
+                text: "Posso todas as coisas naquele  que me fortalece."
+            },
+            {
+                reference: "Isaías 40:31",
+                text: "Mas os que confiam no SENHOR renovarão as forças, subirão com asas como águias; correrão, e não se cansarão; caminharão, e não se fatigarão."
+            },
+            {
+                reference: "2 Coríntios 12:9",
+                text: "Mas ele me disse: “Minha graça te basta, porque meu poder se aperfeiçoa na fraqueza”. Por isso, com muito prazer, eu me orgulharei nas minhas fraquezas, para que o poder de Cristo habite em mim."
+            },
+            {
+                reference: "Salmos 18:33",
+                text: "Ele faz meus pés como o das cervas; e me põe em meus lugares altos."
+            }
+        ]
+    },
+    11: {
+        title: "11. Vitória",
+        icon: "🏆",
+        promises: [
+            {
+                reference: "1 Coríntios 15:57",
+                text: "Mas graças a Deus, que nos dá vitória por meio do nosso Senhor Jesus Cristo."
+            },
+            {
+                reference: "Romanos 8:37",
+                text: "Mas em todas estas coisas somos mais que vencedores, por meio daquele que nos amou."
+            },
+            {
+                reference: "1 João 5:4",
+                text: "Pois todo aquele que é nascido de Deus vence o mundo; e esta é a vitória que vence o mundo: a nossa fé."
+            }
+        ]
+    },
+    12: {
+        title: "12. Batalha espiritual",
+        icon: "⚔️",
+        promises: [
+            {
+                reference: "Efésios 6:11",
+                text: "Revesti-vos de toda a armadura de Deus, para que possais estar firmes contra as ciladas do diabo."
+            },
+            {
+                reference: "Tiago 4:7",
+                text: "Sujeitai-vos, pois, a Deus; resisti ao diabo, e ele fugirá de vós."
+            },
+            {
+                reference: "2 Coríntios 10:4",
+                text: "Porque as armas de nossa batalha não são carnais, mas sim poderosas em Deus, para destruirmos fortalezas;"
+            }
+        ]
+    },
+    13: {
+        title: "13. Ansiedade e medo",
+        icon: "😰",
+        promises: [
+            {
+                reference: "Isaías 41:10",
+                text: "Não temas, porque eu estou contigo; não te assombres, porque eu sou teu Deus. Eu te fortaleço, te ajudo, e te sustento com a minha mão direita de justiça."
+            },
+            {
+                reference: "1 Pedro 5:7",
+                text: "lançando sobre ele toda a vossa ansiedade; porque ele tem cuidado de vós."
+            },
+            {
+                reference: "Salmos 34:5",
+                text: "Os que olham para ele ficam visivelmente alegres, e seus rostos não são envergonhados."
+            },
+            {
+                reference: "João 14:27",
+                text: "A paz vos deixo, minha paz vos dou; vou dá- la a vós, não como o mundo a dá. Não se perturbe vosso coração, nem se atemorize."
+            }
+        ]
+    },
+    14: {
+        title: "14. Tristeza e luto",
+        icon: "😢",
+        promises: [
+            {
+                reference: "Mateus 5:4",
+                text: "Benditos são os que choram, porque eles serão consolados."
+            },
+            {
+                reference: "Salmos 34:19",
+                text: "Muitas são as adversidades do justo, mas o SENHOR o livra de todas elas."
+            },
+            {
+                reference: "2 Coríntios 1:3-4",
+                text: "Bendito seja o Deus e Pai de nosso Senhor Jesus Cristo, o Pai das misericórdias, e o Deus de toda consolação, Que nos consola em toda aflição nossa, para que também possamos consolar aos que estiverem em alguma aflição, com a consolação com que nós mesmos por Deus somos consolados."
+            }
+        ]
+    },
+    15: {
+        title: "15. Esperança",
+        icon: "🌟",
+        promises: [
+            {
+                reference: "Romanos 15:13",
+                text: "O Deus da esperança vos encha de toda alegria e paz na fé, para que abundeis em esperança no poder do Espírito Santo."
+            },
+            {
+                reference: "Jeremias 29:11",
+                text: "Porque eu sei os pensamentos que penso quanto a vós, diz o SENHOR, pensamentos de paz, e não de mal, para vos dar um futuro com esperança."
+            },
+            {
+                reference: "Hebreus 6:19",
+                text: "Temos essa esperança  como uma segura e firme âncora da alma, que entra ao interior, além do véu,"
+            }
+        ]
+    },
+    16: {
+        title: "16. Palavra de Deus",
+        icon: "📖",
+        promises: [
+            {
+                reference: "Salmos 119:105",
+                text: "Nun :Tua palavra é lâmpada para meus pés e luz para meu caminho."
+            },
+            {
+                reference: "Josué 1:8",
+                text: "O livro desta lei nunca se apartará de tua boca: antes de dia e de noite meditarás nele, para que guardes e faças conforme tudo o que nele está escrito: porque então farás prosperar teu caminho, e tudo te sairá bem."
+            },
+            {
+                reference: "Hebreus 4:12",
+                text: "Porque a palavra de Deus é viva e eficaz, e mais afiada do que toda espada de dois gumes, e que penetra até a divisão da alma e do espírito, das juntas e das medulas, e é apta para julgar os pensamentos e intenções do coração."
+            }
+        ]
+    },
+    17: {
+        title: "17. Sabedoria",
+        icon: "🧠",
+        promises: [
+            {
+                reference: "Tiago 1:5",
+                text: "Se algum de vós tem falta de sabedoria, peça a Deus, que concede generosamente a todos sem repreender, e lhe será dada."
+            },
+            {
+                reference: "Provérbios 2:6",
+                text: "Porque o SENHOR dá sabedoria; de sua boca vem o conhecimento e o entendimento."
+            },
+            {
+                reference: "Provérbios 3:13",
+                text: "Bem-aventurado o homem que encontra sabedoria, e o homem que ganha conhecimento."
+            }
+        ]
+    },
+    18: {
+        title: "18. Direção",
+        icon: "🎯",
+        promises: [
+            {
+                reference: "Provérbios 3:5-6",
+                text: "Confia no SENHOR com todo o teu coração; e não te apoies em teu próprio entendimento. Dá reconhecimento a ele em todas os teus caminhos; e ele endireitará tuas veredas."
+            },
+            {
+                reference: "Salmos 32:8",
+                text: "Eu te instruirei, e de ensinarei o caminho que deves seguir; eu te aconselharei, e porei meus olhos em ti."
+            },
+            {
+                reference: "Isaías 30:21",
+                text: "E quando virardes para a direita ou para a esquerda, teus ouvidos ouvirão a palavra do que está atrás de ti, dizendo: Este é o caminho; andai por ele."
+            }
+        ]
+    },
+    19: {
+        title: "19. Obediência",
+        icon: "✅",
+        promises: [
+            {
+                reference: "Tiago 1:25",
+                text: "Mas aquele que dá atenção à lei perfeita, a da liberdade, e nela persevera, não sendo ouvinte que esquece, mas sim praticante da obra, esse tal será bendito  no que fizer."
+            },
+            {
+                reference: "João 14:21",
+                text: "Quem tem meus mandamentos, e os guarda, esse é o que me ama; e quem a mim me ama, será amado de meu Pai, e eu o amarei, e a ele me manifestarei."
+            },
+            {
+                reference: "Deuteronômio 28:1",
+                text: "E será que, se ouvires com empenho a voz do SENHOR teu Deus, para guardar, para praticar todos os seus mandamentos que eu te prescrevo hoje, também o SENHOR teu Deus te porá alto sobre todas as nações da terra;"
+            }
+        ]
+    },
+    20: {
+        title: "20. Conhecimento",
+        icon: "🎓",
+        promises: [
+            {
+                reference: "Provérbios 2:3-5",
+                text: "E se clamares à prudência, e à inteligência dirigires tua voz; Se tu a buscares como a prata, e a procurares como que a tesouros escondidos, Então entenderás o temor ao SENHOR, e acharás o conhecimento de Deus."
+            },
+            {
+                reference: "João 8:32",
+                text: "E conhecereis a verdade, e a verdade vos libertará."
+            },
+            {
+                reference: "Colossenses 1:9",
+                text: "Por isso também, desde o dia que o ouvimos, não paramos de orar por vós, e de pedir que sejais cheios do conhecimento da sua vontade, em toda sabedoria e entendimento espiritual;"
+            }
+        ]
+    },
+    21: {
+        title: "21. Família",
+        icon: "👨‍👩‍👧‍👦",
+        promises: [
+            {
+                reference: "Atos 16:31",
+                text: "E eles lhe disseram: Crê no Senhor Jesus Cristo, e serás salvo, tu e a tua casa."
+            },
+            {
+                reference: "Salmos 128:3-4",
+                text: "Tua mulher será como a videira frutífera, ao lado de tua casa; e teus filhos como plantas de oliveira ao redor de tua mesa. Eis que assim é bendito o homem que teme ao SENHOR."
+            },
+            {
+                reference: "Josué 24:15",
+                text: "E se mal vos parece servir ao SENHOR, escolhei hoje a quem sirvais; se aos deuses a os quais serviram vossos pais, quando estiveram da outra parte do rio, ou aos deuses dos amorreus em cuja terra habitais: que eu e minha casa serviremos ao SENHOR."
+            }
+        ]
+    },
+    22: {
+        title: "22. Filhos",
+        icon: "👶",
+        promises: [
+            {
+                reference: "Salmos 127:3",
+                text: "Eis que os filhos são um presente do SENHOR; o fruto do ventre é uma recompensa."
+            },
+            {
+                reference: "Provérbios 22:6",
+                text: "Instrui ao menino em seu caminho, e até quando envelhecer, não se desviará dele."
+            },
+            {
+                reference: "Isaías 54:13",
+                text: "E todos os teus filhos serão ensinados pelo SENHOR; e a paz de teus filhos será abundante."
+            }
+        ]
+    },
+    23: {
+        title: "23. Casamento",
+        icon: "💕",
+        promises: [
+            {
+                reference: "Provérbios 18:22",
+                text: "Quem encontrou esposa, encontrou o bem; e obteve o favor do SENHOR."
+            },
+            {
+                reference: "Gênesis 2:24",
+                text: "Portanto, deixará o homem a seu pai e a sua mãe, e se achegará à sua mulher, e serão uma só carne."
+            },
+            {
+                reference: "Eclesiastes 4:9",
+                text: "Dois são melhores do que um, porque eles têm melhor recompensa por seu trabalho."
+            }
+        ]
+    },
+    24: {
+        title: "24. Trabalho",
+        icon: "💼",
+        promises: [
+            {
+                reference: "Provérbios 12:14",
+                text: "Cada um se sacia do bem pelo fruto de sua própria boca; e a recompensa das mãos do homem lhe será entregue de volta."
+            },
+            {
+                reference: "Colossenses 3:23-24",
+                text: "Tudo quanto fizerdes, fazei de coração, como que para o Senhor, e não para as pessoas. Pois sabeis que recebereis do Senhor a recompensa da herança;servi ao Senhor Cristo."
+            },
+            {
+                reference: "Salmos 90:17",
+                text: "E que o agrado do SENHOR nosso Deus seja sobre nós; e confirma as obras de nossas mãos sobre nós; sim, a obra de nossas mãos, confirma!"
+            }
+        ]
+    },
+    25: {
+        title: "25. Cura",
+        icon: "🏥",
+        promises: [
+            {
+                reference: "Êxodo 15:26",
+                text: "E disse: Se ouvires atentamente a voz do SENHOR teu Deus, e fizeres o correto diante de seus olhos, e deres ouvido a seus mandamentos, e guardares todos os seus estatutos, nenhuma enfermidade das que enviei aos egípcios te enviarei a ti; porque eu sou o SENHOR que te sara."
+            },
+            {
+                reference: "Tiago 5:15",
+                text: "E a oração da fé sarará o doente, e o Senhor o levantará; e se houver cometido pecados, lhe serão perdoados."
+            },
+            {
+                reference: "Salmos 103:2-3",
+                text: "Louva ao SENHOR, ó minha alma; e não te esqueças de nenhum dos benefícios dele; Que perdoa todas as tuas perversidades, e te sara de todas as tuas enfermidades."
+            },
+            {
+                reference: "Jeremias 30:17",
+                text: "Mas eu te farei ter saúde, e sararei tuas feridas, diz o SENHOR; pois te chamaram de rejeitada, dizendo : Esta é Sião, a quem ninguém busca."
+            }
+        ]
+    },
+    26: {
+        title: "26. Paz",
+        icon: "☮️",
+        promises: [
+            {
+                reference: "João 14:27",
+                text: "A paz vos deixo, minha paz vos dou; vou dá- la a vós, não como o mundo a dá. Não se perturbe vosso coração, nem se atemorize."
+            },
+            {
+                reference: "Isaías 26:3",
+                text: "Tu guardarás em completa paz aquele que tem firme entendimento, pois ele confia em ti."
+            },
+            {
+                reference: "Filipenses 4:7",
+                text: "e a paz de Deus, que excede todo entendimento, guardará os vossos corações e as vossas mentes em Cristo Jesus."
+            }
+        ]
+    },
+    27: {
+        title: "27. Perdão",
+        icon: "💬",
+        promises: [
+            {
+                reference: "1 João 1:9",
+                text: "Se confessarmos nossos pecados, ele é fiel e justo para nos perdoar os pecados e nos purificar de toda injustiça."
+            },
+            {
+                reference: "Isaías 43:25",
+                text: "Eu, eu sou o que anulo tuas transgressões por causa de mim; e te teus pecados eu não me lembro."
+            },
+            {
+                reference: "Salmos 103:12",
+                text: "Assim como o oriente está longe do ocidente, assim também ele tira para longe de nós nossas transgressões."
+            }
+        ]
+    },
+    28: {
+        title: "28. Perseverança",
+        icon: "🏃",
+        promises: [
+            {
+                reference: "Gálatas 6:9",
+                text: "Porém não cansemos de fazer o bem, pois no tempo devido colheremos, se não desistirmos."
+            },
+            {
+                reference: "Hebreus 12:1",
+                text: "Portanto nós também, posto que estamos rodeados por uma tão grande nuvem de testemunhas, deixemos toda sobrecarga, e o pecado envolvente, e corramos com paciência a corrida que nos está proposta,"
+            },
+            {
+                reference: "Tiago 1:12",
+                text: "Bendito  é o homem que suporta a provação; pois, quando for aprovado, receberá a coroa da vida, que o Senhor prometeu aos que o amam."
+            }
+        ]
+    },
+    29: {
+        title: "29. Santidade",
+        icon: "😇",
+        promises: [
+            {
+                reference: "1 Pedro 1:15-16",
+                text: "Ao contrário; assim como aquele que vos chamou é santo, sede vós também santos em todo o vosso comportamento. Pois está escrito: Sede santos, porque eu sou santo."
+            },
+            {
+                reference: "Hebreus 12:14",
+                text: "Buscai a paz com todos, e a santificação, sem a qual ninguém verá o Senhor."
+            },
+            {
+                reference: "1 Tessalonicenses 4:7",
+                text: "Pois Deus não nos chamou para a impureza, mas sim para a santificação."
+            }
+        ]
+    },
+    30: {
+        title: "30. Paciência",
+        icon: "⏰",
+        promises: [
+            {
+                reference: "Salmos 27:14",
+                text: "Espera no SENHOR, esforça-te, e ele fortalecerá o teu coração; espera pois ao SENHOR."
+            },
+            {
+                reference: "Romanos 8:25",
+                text: "Mas, se esperamos o que não vemos, com paciência esperamos."
+            },
+            {
+                reference: "Isaías 40:31",
+                text: "Mas os que confiam no SENHOR renovarão as forças, subirão com asas como águias; correrão, e não se cansarão; caminharão, e não se fatigarão."
+            }
+        ]
+    },
+    31: {
+        title: "31. Volta de Cristo",
+        icon: "👑",
+        promises: [
+            {
+                reference: "João 14:3",
+                text: "E quando eu for, e vos preparar lugar, outra vez virei, e vos tomarei comigo, para que vós também estejais onde eu estiver."
+            },
+            {
+                reference: "1 Tessalonicenses 4:16-17",
+                text: "Pois o mesmo Senhor descerá do céu com grande aclamação, com voz de arcanjo, e com trombeta de Deus; e os que morreram em Cristo ressuscitarão primeiro; Em seguida nós, os que ficarmos vivos, seremos arrebatados juntamente com eles nas nuvens, para encontrar o Senhor no ar, e assim estaremos com o Senhor para sempre."
+            },
+            {
+                reference: "Apocalipse 22:12",
+                text: "Eis que logo venho, e minha recompensa está comigo, para retribuir a cada um assim como for sua obra."
+            }
+        ]
+    },
+    32: {
+        title: "32. Novos céus e terra",
+        icon: "🌍",
+        promises: [
+            {
+                reference: "2 Pedro 3:13",
+                text: "Porém, segundo a sua promessa, aguardamos novos céus e nova terra, em que a justiça habita."
+            },
+            {
+                reference: "Isaías 65:17",
+                text: "Porque eis que eu crio novos céus e nova terra; e não haverámais  lembrança das coisas passadas, nem mais virão à mente."
+            },
+            {
+                reference: "Apocalipse 21:1",
+                text: "E eu vi um novo céu e uma nova terra; porque o primeiro céu e a primeira terra já passaram; e e já não havia mar."
+            }
+        ]
+    },
+    33: {
+        title: "33. Ressurreição",
+        icon: "👼",
+        promises: [
+            {
+                reference: "1 Coríntios 15:52",
+                text: "Em um momento, em um piscar de olhos, à ultima trombeta; porque a trombeta soará, e os mortos ressuscitarão incorruptíveis, e nós seremos transformados."
+            },
+            {
+                reference: "João 11:25-26",
+                text: "Disse-lhe Jesus: Eu sou a ressurreição, e a vida; quem crê em mim, ainda que esteja morto, viverá. E todo aquele que vive, e crê em mim, para sempre não morrerá. Crês nisto?"
+            },
+            {
+                reference: "Filipenses 3:21",
+                text: "Ele transformará o nosso degradante corpo, para que seja conforme o seu corpo glorioso, segundo a operação do seu poder de sujeitar para si todas as coisas."
+            }
+        ]
+    },
+    34: {
+        title: "34. Fim do sofrimento",
+        icon: "😌",
+        promises: [
+            {
+                reference: "Apocalipse 21:4",
+                text: "E Deus limpará toda lágrima dos olhos deles; e não haverá mais morte, nem pranto, nem clamor, nem mais haverá dor; porque as primeiras coisas já passaram."
+            },
+            {
+                reference: "Romanos 8:18",
+                text: "Pois considero que as aflições deste tempo presente nem se comparam com a glória que nos será revelada."
+            },
+            {
+                reference: "Isaías 25:8",
+                text: "Ele devorará a morte para sempre, e o Senhor DEUS enxugará as lágrimas de todos os rostos; e tirará a humilhação de seu povo de toda a terra; pois o SENHOR assim disse."
+            }
+        ]
+    },
+    35: {
+        title: "35. Morada eterna",
+        icon: "🏰",
+        promises: [
+            {
+                reference: "João 14:2",
+                text: "Na casa de meu Pai há muitas moradas; senão, eu vos diria; vou para vos preparar lugar."
+            },
+            {
+                reference: "Apocalipse 21:3",
+                text: "E eu ouvi uma grande voz do céu, dizendo: Eis que o tabernáculo de Deus está com os homens, e com eles habitará, e eles serão seu povo, e o próprio Deus estará com eles, e será seu Deus."
+            },
+            {
+                reference: "Salmos 23:6",
+                text: "Certamente o bem e a bondade me seguirão todos os dias de minha vida; e habitarei na casa do SENHOR por muitos e muitos dias."
+            }
+        ]
+    }
+};
 
-<div id="detail" class="detail">
-  <button class="retour" id="retour">&larr; Voltar aos temas</button>
-  <div class="section">
-    <div class="section-header"><h2 class="section-title" id="detail-titre"></h2></div>
-    <div id="detail-versets"></div>
-    <p class="source">Versão <strong>Bíblia Livre</strong>, sob licença CC BY 3.0 BR — © Diego Santos, Mario Sérgio e Marco Teles.</p>
-  </div>
-</div>
+function showCategory(categoryId) {
+    document.getElementById('mainView').classList.add('hidden');
+    document.getElementById('detailView').classList.remove('hidden');
+    
+    const category = promessesData[categoryId];
+    document.getElementById('detailTitle').textContent = category.icon + ' ' + category.title;
+    
+    const promisesList = document.getElementById('promisesList');
+    promisesList.innerHTML = category.promises.map(promise => {
+        const textEscaped = promise.text.replace(/'/g, "\\'").replace(/"/g, '&quot;');
+        return `
+            <div class="promise-card" onclick='openModal("${promise.reference}", "${textEscaped}")'>
+                <div class="promise-reference">📖 ${promise.reference}</div>
+                <div class="promise-text">${promise.text}</div>
+            </div>
+        `;
+    }).join('');
+    
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-<div class="carte">
-  <h2>O texto bíblico</h2>
-  <p>Versão <strong>Bíblia Livre</strong>, sob licença CC BY 3.0 BR — © Diego Santos, Mario Sérgio e Marco Teles.</p>
-  <p>Outros recursos: <a href="https://manialibris.com/recursos.html">manialibris.com</a></p>
-</div>
+function showMainView() {
+    document.getElementById('mainView').classList.remove('hidden');
+    document.getElementById('detailView').classList.add('hidden');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
 
-<footer>Mania Libris</footer>
-</div>
+function openModal(reference, text) {
+    document.getElementById('modalReference').textContent = reference;
+    document.getElementById('modalVerse').textContent = text;
+    document.getElementById('modal').style.display = 'block';
+}
 
-<div class="modale" id="modale" role="dialog" aria-modal="true" aria-labelledby="modale-ref">
-  <div class="modale-boite">
-    <button class="modale-fermer" id="modale-fermer" aria-label="Fechar">&times;</button>
-    <div class="modale-ref" id="modale-ref"></div>
-    <div class="modale-txt" id="modale-txt"></div>
-  </div>
-</div>
+function closeModal() {
+    document.getElementById('modal').style.display = 'none';
+}
 
-<button class="haut" id="haut" aria-label="Topo da página">&uarr;</button>
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+window.addEventListener('scroll', function() {
+    const scrollButton = document.getElementById('scrollToTop');
+    if (window.pageYOffset > 300) {
+        scrollButton.classList.add('visible');
+    } else {
+        scrollButton.classList.remove('visible');
+    }
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+        closeModal();
+    }
+});
+    </script>
+</body>
+<!-- SCRIPT DE SCROLL VERS LE HAUT DE LA CATEGORIE -->
+<!-- À ajouter JUSTE AVANT </body> -->
+
 <script>
-const DONNEES = {"1": {"icone": "✝️", "titre": "1. Salvação e Redenção", "versets": [{"ref": "João 3:16", "texte": "Porque Deus amou ao mundo de tal maneira, que deu o seu Filho unigênito; para que todo aquele que nele crê não pereça, mas tenha a vida eterna."}, {"ref": "Romanos 10:9", "texte": "Pois, se com a tua boca declarares que Jesus é Senhor, e em teu coração creres que Deus o ressuscitou dos mortos, serás salvo."}, {"ref": "Atos 16:31", "texte": "E eles lhe disseram: Crê no Senhor Jesus Cristo, e serás salvo, tu e a tua casa."}, {"ref": "Efésios 2:8-9", "texte": "Porque pela graça sois salvos, por meio da fé; e isto não vem de vós; é dom de Deus; não por obras, para que ninguém tenha orgulho de si mesmo."}]}, "2": {"icone": "❤️", "titre": "2. Amor de Deus", "versets": [{"ref": "Romanos 8:38-39", "texte": "Pois tenho certeza que nem a morte, nem a vida, nem anjos, nem principados, nem o presente, nem o futuro, nem poderes, nem altura, nem profundeza, nem qualquer outra criatura poderá nos separar do amor de Deus, que está em Cristo Jesus, nosso Senhor."}, {"ref": "1 João 4:16", "texte": "E nós conhecemos e cremos no amor que Deus tem por nós. Deus é amor, e quem está no amor está em Deus, e Deus habita nele."}, {"ref": "Jeremias 31:3", "texte": "O SENHOR apareceu a mim já há muito tempo, dizendo: Com amor eterno eu tenho te amado; por isso com bondade te sustento."}, {"ref": "Salmos 103:11", "texte": "Porque, assim como os céus estão bem mais elevados que a terra, assim também prevalece a bondade dele sobre aqueles que o temem."}]}, "3": {"icone": "🕊️", "titre": "3. Espírito Santo", "versets": [{"ref": "Atos 1:8", "texte": "Mas vós recebereis poder do Espírito Santo, que virá sobre vós; e vós sereis minhas testemunhas, tanto em Jerusalém como em toda a Judeia, e Samaria, e até ao último lugar da terra."}, {"ref": "João 14:16-17", "texte": "E eu rogarei ao Pai, e ele vos dará outro Consolador, para que fique sempre convosco; Ao Espírito de verdade, a quem o mundo não pode receber; porque não o vê, nem o conhece; mas vós o conheceis, porque habita convosco, e estará em vós."}, {"ref": "Romanos 8:26", "texte": "E da mesma maneira também o Espírito ajuda em nossas fraquezas. Pois não sabemos orar como se deve, mas o próprio Espírito intercede por nós com gemidos inexprimíveis."}]}, "4": {"icone": "🙏", "titre": "4. Oração", "versets": [{"ref": "Mateus 7:7", "texte": "Pedi, e vos será dado; buscai, e achareis; batei, e vos será aberto;"}, {"ref": "1 João 5:14", "texte": "E esta é a confiança que diante dele: que se pedirmos alguma coisa conforme a sua vontade, ele nos ouve."}, {"ref": "Filipenses 4:6", "texte": "Não estejais ansiosos por coisa alguma; mas em tudo, por meio de orações e súplicas com ações de gratidão, sejam os vossos pedidos conhecidos por Deus;"}, {"ref": "Tiago 5:16", "texte": "Confessai as vossas culpas uns aos outros, e orai uns pelos outros, para que sejais curados. A oração de um justo muito pode efetuar."}]}, "5": {"icone": "😊", "titre": "5. Alegria", "versets": [{"ref": "Neemias 8:10", "texte": "E disse-lhes mais: Ide, comei gorduras, e bebei doçuras, e enviai porções aos que não têm preparado; porque este é um dia consagrado ao nosso Senhor; portanto não vos entristeçais, porque a alegria do SENHOR é vossa força."}, {"ref": "João 16:24", "texte": "Até agora nada pedistes em meu nome; pedi, e recebereis, para que vossa alegria seja completa."}, {"ref": "Salmos 16:11", "texte": "Tu me farás conhecer o caminho da vida; fartura de alegrias há em tua presença; agrados estão em tua mão direita para sempre."}]}, "6": {"icone": "🛡️", "titre": "6. Proteção", "versets": [{"ref": "Salmos 91:11", "texte": "Porque ele ordenou aos anjos quanto a ti, para que guardem todos os teus caminhos."}, {"ref": "Provérbios 18:10", "texte": "O nome do SENHOR é uma torre forte; o justo correrá até ele, e ficará seguro."}, {"ref": "Salmos 121:7-8", "texte": "O SENHOR te guardará de todo mal; ele guardará a tua alma. O SENHOR guardará tua saída e tua entrada, desde agora e para sempre."}, {"ref": "2 Tessalonicenses 3:3", "texte": "Mas fiel é o Senhor, que vos fortalecerá e vos guardará do maligno."}]}, "7": {"icone": "🏠", "titre": "7. Refúgio", "versets": [{"ref": "Salmos 46:2", "texte": "Por isso não temeremos, ainda que a terra se mova, e ainda que as montanhas passem ao interior dos mares;Ainda que suas águas rujam e se perturbem, e as montanhas tremam por sua braveza. (Selá)"}, {"ref": "Salmos 91:1-2", "texte": "Aquele que mora no esconderijo do Altíssimo, à sombra do Todo-Poderoso habitará. Direi ao SENHOR: Tu és meu refúgio e minha fortaleza; Deus meu, em quem confio."}, {"ref": "Naum 1:7", "texte": "O SENHOR é bom, é fortaleza no dia da angústia; ele conhece os que nele confiam."}]}, "8": {"icone": "🍞", "titre": "8. Provisão", "versets": [{"ref": "Filipenses 4:19", "texte": "E meu Deus suprirá todas a vossas necessidades segundo as suas riquezas em glória em Cristo Jesus."}, {"ref": "Mateus 6:33", "texte": "Mas buscai primeiramente o seu Reino e a sua justiça, e todas estas coisas vos serão acrescentadas."}, {"ref": "Salmos 37:25", "texte": "Eu já fui jovem, e já envelheci; mas nunca vi o justo desamparado, nem a sua semente a pedir pão."}, {"ref": "Salmos 23:1", "texte": "O SENHOR é meu pastor, nada me faltará."}]}, "9": {"icone": "💰", "titre": "9. Prosperidade", "versets": [{"ref": "3 João 1:2", "texte": "Amado, eu desejo que estejas bem em todas as coisas, e que tenhas saúde, assim como bem está a tua alma."}, {"ref": "Malaquias 3:10", "texte": "Trazei todos os dízimos à casa do tesouro, para que haja alimento em minha casa; e provai-me nisto, diz o SENHOR dos exércitos, se não vos abrir as janelas dos céu, e derramar sobre vós bênção transbordante."}, {"ref": "Provérbios 3:9-10", "texte": "Honra ao SENHOR com teus bens, e com a primeira parte de toda a tua renda. E teus celeiros se encherão de fartura, e teus tanques transbordarão de vinho novo."}]}, "10": {"icone": "💪", "titre": "10. Força", "versets": [{"ref": "Filipenses 4:13", "texte": "Posso todas as coisas naquele  que me fortalece."}, {"ref": "Isaías 40:31", "texte": "Mas os que confiam no SENHOR renovarão as forças, subirão com asas como águias; correrão, e não se cansarão; caminharão, e não se fatigarão."}, {"ref": "2 Coríntios 12:9", "texte": "Mas ele me disse: “Minha graça te basta, porque meu poder se aperfeiçoa na fraqueza”. Por isso, com muito prazer, eu me orgulharei nas minhas fraquezas, para que o poder de Cristo habite em mim."}, {"ref": "Salmos 18:33", "texte": "Ele faz meus pés como o das cervas; e me põe em meus lugares altos."}]}, "11": {"icone": "🏆", "titre": "11. Vitória", "versets": [{"ref": "1 Coríntios 15:57", "texte": "Mas graças a Deus, que nos dá vitória por meio do nosso Senhor Jesus Cristo."}, {"ref": "Romanos 8:37", "texte": "Mas em todas estas coisas somos mais que vencedores, por meio daquele que nos amou."}, {"ref": "1 João 5:4", "texte": "Pois todo aquele que é nascido de Deus vence o mundo; e esta é a vitória que vence o mundo: a nossa fé."}]}, "12": {"icone": "⚔️", "titre": "12. Batalha espiritual", "versets": [{"ref": "Efésios 6:11", "texte": "Revesti-vos de toda a armadura de Deus, para que possais estar firmes contra as ciladas do diabo."}, {"ref": "Tiago 4:7", "texte": "Sujeitai-vos, pois, a Deus; resisti ao diabo, e ele fugirá de vós."}, {"ref": "2 Coríntios 10:4", "texte": "Porque as armas de nossa batalha não são carnais, mas sim poderosas em Deus, para destruirmos fortalezas;"}]}, "13": {"icone": "😰", "titre": "13. Ansiedade e medo", "versets": [{"ref": "Isaías 41:10", "texte": "Não temas, porque eu estou contigo; não te assombres, porque eu sou teu Deus. Eu te fortaleço, te ajudo, e te sustento com a minha mão direita de justiça."}, {"ref": "1 Pedro 5:7", "texte": "lançando sobre ele toda a vossa ansiedade; porque ele tem cuidado de vós."}, {"ref": "Salmos 34:5", "texte": "Os que olham para ele ficam visivelmente alegres, e seus rostos não são envergonhados."}, {"ref": "João 14:27", "texte": "A paz vos deixo, minha paz vos dou; vou dá- la a vós, não como o mundo a dá. Não se perturbe vosso coração, nem se atemorize."}]}, "14": {"icone": "😢", "titre": "14. Tristeza e luto", "versets": [{"ref": "Mateus 5:4", "texte": "Benditos são os que choram, porque eles serão consolados."}, {"ref": "Salmos 34:19", "texte": "Muitas são as adversidades do justo, mas o SENHOR o livra de todas elas."}, {"ref": "2 Coríntios 1:3-4", "texte": "Bendito seja o Deus e Pai de nosso Senhor Jesus Cristo, o Pai das misericórdias, e o Deus de toda consolação, Que nos consola em toda aflição nossa, para que também possamos consolar aos que estiverem em alguma aflição, com a consolação com que nós mesmos por Deus somos consolados."}]}, "15": {"icone": "🌟", "titre": "15. Esperança", "versets": [{"ref": "Romanos 15:13", "texte": "O Deus da esperança vos encha de toda alegria e paz na fé, para que abundeis em esperança no poder do Espírito Santo."}, {"ref": "Jeremias 29:11", "texte": "Porque eu sei os pensamentos que penso quanto a vós, diz o SENHOR, pensamentos de paz, e não de mal, para vos dar um futuro com esperança."}, {"ref": "Hebreus 6:19", "texte": "Temos essa esperança  como uma segura e firme âncora da alma, que entra ao interior, além do véu,"}]}, "16": {"icone": "📖", "titre": "16. Palavra de Deus", "versets": [{"ref": "Salmos 119:105", "texte": "Nun :Tua palavra é lâmpada para meus pés e luz para meu caminho."}, {"ref": "Josué 1:8", "texte": "O livro desta lei nunca se apartará de tua boca: antes de dia e de noite meditarás nele, para que guardes e faças conforme tudo o que nele está escrito: porque então farás prosperar teu caminho, e tudo te sairá bem."}, {"ref": "Hebreus 4:12", "texte": "Porque a palavra de Deus é viva e eficaz, e mais afiada do que toda espada de dois gumes, e que penetra até a divisão da alma e do espírito, das juntas e das medulas, e é apta para julgar os pensamentos e intenções do coração."}]}, "17": {"icone": "🧠", "titre": "17. Sabedoria", "versets": [{"ref": "Tiago 1:5", "texte": "Se algum de vós tem falta de sabedoria, peça a Deus, que concede generosamente a todos sem repreender, e lhe será dada."}, {"ref": "Provérbios 2:6", "texte": "Porque o SENHOR dá sabedoria; de sua boca vem o conhecimento e o entendimento."}, {"ref": "Provérbios 3:13", "texte": "Bem-aventurado o homem que encontra sabedoria, e o homem que ganha conhecimento."}]}, "18": {"icone": "🎯", "titre": "18. Direção", "versets": [{"ref": "Provérbios 3:5-6", "texte": "Confia no SENHOR com todo o teu coração; e não te apoies em teu próprio entendimento. Dá reconhecimento a ele em todas os teus caminhos; e ele endireitará tuas veredas."}, {"ref": "Salmos 32:8", "texte": "Eu te instruirei, e de ensinarei o caminho que deves seguir; eu te aconselharei, e porei meus olhos em ti."}, {"ref": "Isaías 30:21", "texte": "E quando virardes para a direita ou para a esquerda, teus ouvidos ouvirão a palavra do que está atrás de ti, dizendo: Este é o caminho; andai por ele."}]}, "19": {"icone": "✅", "titre": "19. Obediência", "versets": [{"ref": "Tiago 1:25", "texte": "Mas aquele que dá atenção à lei perfeita, a da liberdade, e nela persevera, não sendo ouvinte que esquece, mas sim praticante da obra, esse tal será bendito  no que fizer."}, {"ref": "João 14:21", "texte": "Quem tem meus mandamentos, e os guarda, esse é o que me ama; e quem a mim me ama, será amado de meu Pai, e eu o amarei, e a ele me manifestarei."}, {"ref": "Deuteronômio 28:1", "texte": "E será que, se ouvires com empenho a voz do SENHOR teu Deus, para guardar, para praticar todos os seus mandamentos que eu te prescrevo hoje, também o SENHOR teu Deus te porá alto sobre todas as nações da terra;"}]}, "20": {"icone": "🎓", "titre": "20. Conhecimento", "versets": [{"ref": "Provérbios 2:3-5", "texte": "E se clamares à prudência, e à inteligência dirigires tua voz; Se tu a buscares como a prata, e a procurares como que a tesouros escondidos, Então entenderás o temor ao SENHOR, e acharás o conhecimento de Deus."}, {"ref": "João 8:32", "texte": "E conhecereis a verdade, e a verdade vos libertará."}, {"ref": "Colossenses 1:9", "texte": "Por isso também, desde o dia que o ouvimos, não paramos de orar por vós, e de pedir que sejais cheios do conhecimento da sua vontade, em toda sabedoria e entendimento espiritual;"}]}, "21": {"icone": "👨‍👩‍👧‍👦", "titre": "21. Família", "versets": [{"ref": "Atos 16:31", "texte": "E eles lhe disseram: Crê no Senhor Jesus Cristo, e serás salvo, tu e a tua casa."}, {"ref": "Salmos 128:3-4", "texte": "Tua mulher será como a videira frutífera, ao lado de tua casa; e teus filhos como plantas de oliveira ao redor de tua mesa. Eis que assim é bendito o homem que teme ao SENHOR."}, {"ref": "Josué 24:15", "texte": "E se mal vos parece servir ao SENHOR, escolhei hoje a quem sirvais; se aos deuses a os quais serviram vossos pais, quando estiveram da outra parte do rio, ou aos deuses dos amorreus em cuja terra habitais: que eu e minha casa serviremos ao SENHOR."}]}, "22": {"icone": "👶", "titre": "22. Filhos", "versets": [{"ref": "Salmos 127:3", "texte": "Eis que os filhos são um presente do SENHOR; o fruto do ventre é uma recompensa."}, {"ref": "Provérbios 22:6", "texte": "Instrui ao menino em seu caminho, e até quando envelhecer, não se desviará dele."}, {"ref": "Isaías 54:13", "texte": "E todos os teus filhos serão ensinados pelo SENHOR; e a paz de teus filhos será abundante."}]}, "23": {"icone": "💕", "titre": "23. Casamento", "versets": [{"ref": "Provérbios 18:22", "texte": "Quem encontrou esposa, encontrou o bem; e obteve o favor do SENHOR."}, {"ref": "Gênesis 2:24", "texte": "Portanto, deixará o homem a seu pai e a sua mãe, e se achegará à sua mulher, e serão uma só carne."}, {"ref": "Eclesiastes 4:9", "texte": "Dois são melhores do que um, porque eles têm melhor recompensa por seu trabalho."}]}, "24": {"icone": "💼", "titre": "24. Trabalho", "versets": [{"ref": "Provérbios 12:14", "texte": "Cada um se sacia do bem pelo fruto de sua própria boca; e a recompensa das mãos do homem lhe será entregue de volta."}, {"ref": "Colossenses 3:23-24", "texte": "Tudo quanto fizerdes, fazei de coração, como que para o Senhor, e não para as pessoas. Pois sabeis que recebereis do Senhor a recompensa da herança;servi ao Senhor Cristo."}, {"ref": "Salmos 90:17", "texte": "E que o agrado do SENHOR nosso Deus seja sobre nós; e confirma as obras de nossas mãos sobre nós; sim, a obra de nossas mãos, confirma!"}]}, "25": {"icone": "🏥", "titre": "25. Cura", "versets": [{"ref": "Êxodo 15:26", "texte": "E disse: Se ouvires atentamente a voz do SENHOR teu Deus, e fizeres o correto diante de seus olhos, e deres ouvido a seus mandamentos, e guardares todos os seus estatutos, nenhuma enfermidade das que enviei aos egípcios te enviarei a ti; porque eu sou o SENHOR que te sara."}, {"ref": "Tiago 5:15", "texte": "E a oração da fé sarará o doente, e o Senhor o levantará; e se houver cometido pecados, lhe serão perdoados."}, {"ref": "Salmos 103:2-3", "texte": "Louva ao SENHOR, ó minha alma; e não te esqueças de nenhum dos benefícios dele; Que perdoa todas as tuas perversidades, e te sara de todas as tuas enfermidades."}, {"ref": "Jeremias 30:17", "texte": "Mas eu te farei ter saúde, e sararei tuas feridas, diz o SENHOR; pois te chamaram de rejeitada, dizendo : Esta é Sião, a quem ninguém busca."}]}, "26": {"icone": "☮️", "titre": "26. Paz", "versets": [{"ref": "João 14:27", "texte": "A paz vos deixo, minha paz vos dou; vou dá- la a vós, não como o mundo a dá. Não se perturbe vosso coração, nem se atemorize."}, {"ref": "Isaías 26:3", "texte": "Tu guardarás em completa paz aquele que tem firme entendimento, pois ele confia em ti."}, {"ref": "Filipenses 4:7", "texte": "e a paz de Deus, que excede todo entendimento, guardará os vossos corações e as vossas mentes em Cristo Jesus."}]}, "27": {"icone": "💬", "titre": "27. Perdão", "versets": [{"ref": "1 João 1:9", "texte": "Se confessarmos nossos pecados, ele é fiel e justo para nos perdoar os pecados e nos purificar de toda injustiça."}, {"ref": "Isaías 43:25", "texte": "Eu, eu sou o que anulo tuas transgressões por causa de mim; e te teus pecados eu não me lembro."}, {"ref": "Salmos 103:12", "texte": "Assim como o oriente está longe do ocidente, assim também ele tira para longe de nós nossas transgressões."}]}, "28": {"icone": "🏃", "titre": "28. Perseverança", "versets": [{"ref": "Gálatas 6:9", "texte": "Porém não cansemos de fazer o bem, pois no tempo devido colheremos, se não desistirmos."}, {"ref": "Hebreus 12:1", "texte": "Portanto nós também, posto que estamos rodeados por uma tão grande nuvem de testemunhas, deixemos toda sobrecarga, e o pecado envolvente, e corramos com paciência a corrida que nos está proposta,"}, {"ref": "Tiago 1:12", "texte": "Bendito  é o homem que suporta a provação; pois, quando for aprovado, receberá a coroa da vida, que o Senhor prometeu aos que o amam."}]}, "29": {"icone": "😇", "titre": "29. Santidade", "versets": [{"ref": "1 Pedro 1:15-16", "texte": "Ao contrário; assim como aquele que vos chamou é santo, sede vós também santos em todo o vosso comportamento. Pois está escrito: Sede santos, porque eu sou santo."}, {"ref": "Hebreus 12:14", "texte": "Buscai a paz com todos, e a santificação, sem a qual ninguém verá o Senhor."}, {"ref": "1 Tessalonicenses 4:7", "texte": "Pois Deus não nos chamou para a impureza, mas sim para a santificação."}]}, "30": {"icone": "⏰", "titre": "30. Paciência", "versets": [{"ref": "Salmos 27:14", "texte": "Espera no SENHOR, esforça-te, e ele fortalecerá o teu coração; espera pois ao SENHOR."}, {"ref": "Romanos 8:25", "texte": "Mas, se esperamos o que não vemos, com paciência esperamos."}, {"ref": "Isaías 40:31", "texte": "Mas os que confiam no SENHOR renovarão as forças, subirão com asas como águias; correrão, e não se cansarão; caminharão, e não se fatigarão."}]}, "31": {"icone": "👑", "titre": "31. Volta de Cristo", "versets": [{"ref": "João 14:3", "texte": "E quando eu for, e vos preparar lugar, outra vez virei, e vos tomarei comigo, para que vós também estejais onde eu estiver."}, {"ref": "1 Tessalonicenses 4:16-17", "texte": "Pois o mesmo Senhor descerá do céu com grande aclamação, com voz de arcanjo, e com trombeta de Deus; e os que morreram em Cristo ressuscitarão primeiro; Em seguida nós, os que ficarmos vivos, seremos arrebatados juntamente com eles nas nuvens, para encontrar o Senhor no ar, e assim estaremos com o Senhor para sempre."}, {"ref": "Apocalipse 22:12", "texte": "Eis que logo venho, e minha recompensa está comigo, para retribuir a cada um assim como for sua obra."}]}, "32": {"icone": "🌍", "titre": "32. Novos céus e terra", "versets": [{"ref": "2 Pedro 3:13", "texte": "Porém, segundo a sua promessa, aguardamos novos céus e nova terra, em que a justiça habita."}, {"ref": "Isaías 65:17", "texte": "Porque eis que eu crio novos céus e nova terra; e não haverámais  lembrança das coisas passadas, nem mais virão à mente."}, {"ref": "Apocalipse 21:1", "texte": "E eu vi um novo céu e uma nova terra; porque o primeiro céu e a primeira terra já passaram; e e já não havia mar."}]}, "33": {"icone": "👼", "titre": "33. Ressurreição", "versets": [{"ref": "1 Coríntios 15:52", "texte": "Em um momento, em um piscar de olhos, à ultima trombeta; porque a trombeta soará, e os mortos ressuscitarão incorruptíveis, e nós seremos transformados."}, {"ref": "João 11:25-26", "texte": "Disse-lhe Jesus: Eu sou a ressurreição, e a vida; quem crê em mim, ainda que esteja morto, viverá. E todo aquele que vive, e crê em mim, para sempre não morrerá. Crês nisto?"}, {"ref": "Filipenses 3:21", "texte": "Ele transformará o nosso degradante corpo, para que seja conforme o seu corpo glorioso, segundo a operação do seu poder de sujeitar para si todas as coisas."}]}, "34": {"icone": "😌", "titre": "34. Fim do sofrimento", "versets": [{"ref": "Apocalipse 21:4", "texte": "E Deus limpará toda lágrima dos olhos deles; e não haverá mais morte, nem pranto, nem clamor, nem mais haverá dor; porque as primeiras coisas já passaram."}, {"ref": "Romanos 8:18", "texte": "Pois considero que as aflições deste tempo presente nem se comparam com a glória que nos será revelada."}, {"ref": "Isaías 25:8", "texte": "Ele devorará a morte para sempre, e o Senhor DEUS enxugará as lágrimas de todos os rostos; e tirará a humilhação de seu povo de toda a terra; pois o SENHOR assim disse."}]}, "35": {"icone": "🏰", "titre": "35. Morada eterna", "versets": [{"ref": "João 14:2", "texte": "Na casa de meu Pai há muitas moradas; senão, eu vos diria; vou para vos preparar lugar."}, {"ref": "Apocalipse 21:3", "texte": "E eu ouvi uma grande voz do céu, dizendo: Eis que o tabernáculo de Deus está com os homens, e com eles habitará, e eles serão seu povo, e o próprio Deus estará com eles, e será seu Deus."}, {"ref": "Salmos 23:6", "texte": "Certamente o bem e a bondade me seguirão todos os dias de minha vida; e habitarei na casa do SENHOR por muitos e muitos dias."}]}};
-const MOTS = {"retour": "Voltar aos temas"};
-
-const vueThemes = document.getElementById('themes');
-const vueDetail = document.getElementById('detail');
-const titreDetail = document.getElementById('detail-titre');
-const listeDetail = document.getElementById('detail-versets');
-
-function ouvrir(n) {
-  const t = DONNEES[n];
-  titreDetail.textContent = t.icone + '  ' + t.titre;
-  listeDetail.innerHTML = t.versets.map(v =>
-    '<div class="verset"><div class="ref"></div><div class="txt"></div></div>').join('');
-  [...listeDetail.children].forEach((el, i) => {
-    el.querySelector('.ref').textContent = t.versets[i].ref;
-    el.querySelector('.txt').textContent = t.versets[i].texte;
-  });
-  vueThemes.classList.add('off');
-  vueDetail.classList.add('on');
-  history.pushState({ theme: n }, '', '#' + n);
-  window.scrollTo(0, 0);
+// Fonction pour scroller vers un élément spécifique
+function scrollToElement(element) {
+    if (!element) return;
+    
+    // Position de l'élément + 100px de marge en haut
+    const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+    const offsetPosition = elementPosition - 100;
+    
+    window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+    });
+    
+    console.log('✅ Scroll vers la catégorie');
 }
 
-function fermer(pousser) {
-  vueDetail.classList.remove('on');
-  vueThemes.classList.remove('off');
-  if (pousser !== false) history.pushState({}, '', '#');
-  window.scrollTo(0, 0);
-}
-
-document.querySelectorAll('.theme').forEach(b =>
-  b.addEventListener('click', () => ouvrir(Number(b.dataset.n))));
-document.getElementById('retour').addEventListener('click', () => fermer());
-
-// le bouton « precedent » du navigateur ferme le theme au lieu de quitter
-addEventListener('popstate', e => {
-  if (e.state && e.state.theme) ouvrir(e.state.theme); else fermer(false);
+// Écouter tous les clics sur la page
+document.addEventListener('click', function(e) {
+    const clickedElement = e.target;
+    
+    // Attendre que le contenu s'ouvre (300ms)
+    setTimeout(function() {
+        // Chercher le prochain élément visible après le bouton cliqué
+        let nextElement = clickedElement.nextElementSibling;
+        
+        // Parcourir les éléments suivants pour trouver celui qui est visible
+        while (nextElement) {
+            const style = window.getComputedStyle(nextElement);
+            
+            // Si l'élément est visible et a du contenu
+            if (style.display !== 'none' && 
+                style.visibility !== 'hidden' && 
+                nextElement.offsetHeight > 0) {
+                
+                // Scroll vers cet élément !
+                scrollToElement(nextElement);
+                break;
+            }
+            
+            nextElement = nextElement.nextElementSibling;
+        }
+        
+        // Si rien trouvé dans les siblings, chercher dans le parent
+        if (!nextElement && clickedElement.parentElement) {
+            const parent = clickedElement.parentElement;
+            let child = parent.firstElementChild;
+            
+            while (child) {
+                const style = window.getComputedStyle(child);
+                
+                if (child !== clickedElement &&
+                    style.display !== 'none' && 
+                    style.visibility !== 'hidden' && 
+                    child.offsetHeight > 0) {
+                    
+                    scrollToElement(child);
+                    break;
+                }
+                
+                child = child.nextElementSibling;
+            }
+        }
+    }, 300);
 });
 
-const modale = document.getElementById('modale');
-listeDetail.addEventListener('click', e => {
-  const bloc = e.target.closest('.verset');
-  if (!bloc) return;
-  document.getElementById('modale-ref').textContent = bloc.querySelector('.ref').textContent;
-  document.getElementById('modale-txt').textContent = bloc.querySelector('.txt').textContent;
-  modale.classList.add('on');
-});
-const fermerModale = () => modale.classList.remove('on');
-document.getElementById('modale-fermer').addEventListener('click', fermerModale);
-modale.addEventListener('click', e => { if (e.target === modale) fermerModale(); });
-addEventListener('keydown', e => { if (e.key === 'Escape') fermerModale(); });
-
-const haut = document.getElementById('haut');
-addEventListener('scroll', () => haut.classList.toggle('on', scrollY > 400));
-haut.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
-
-// une adresse du type ...#12 ouvre directement le theme 12
-if (location.hash.length > 1 && DONNEES[Number(location.hash.slice(1))]) {
-  ouvrir(Number(location.hash.slice(1)));
-}
+console.log('✅ Scroll automatique activé - vers le haut');
 </script>
 </body>
 </html>
