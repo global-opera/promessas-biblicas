@@ -1,17 +1,17 @@
 # ✝️ Promessas de Deus
 
-Aplicativo bíblico interativo com as promessas de Deus organizadas em 35 categorias temáticas.
+Aplicativo bíblico interativo com as promessas de Deus organizadas em 35 categorias temáticas. Versão em português, texto da Bíblia Livre.
 
 🔗 **[Acessar aplicativo](https://global-opera.github.io/promessas-biblicas/)**
 
 ## 📖 Sobre
 
-Este aplicativo permite descobrir facilmente as promessas de Deus na Bíblia para cada situação da vida. Com mais de 130 versículos bíblicos em português, encontre rapidamente o encorajamento e a direção de que você precisa.
+Este aplicativo permite descobrir facilmente as promessas de Deus na Bíblia para cada situação da vida. Com 113 versículos bíblicos em português (Bíblia Livre), encontre rapidamente o encorajamento e a direção de que você precisa.
 
 ## 🎯 Funcionalidades
 
 - **35 categorias organizadas** em 7 seções temáticas
-- **130+ versículos bíblicos** em português
+- **113 versículos bíblicos** em português (Bíblia Livre)
 - **Interface responsiva** que funciona perfeitamente em computador, tablet e smartphone
 - **Modo de leitura completo** - clique em qualquer versículo para lê-lo em tela cheia
 - **Botão flutuante de retorno ao topo** - navegue facilmente pelas categorias
@@ -21,7 +21,7 @@ Este aplicativo permite descobrir facilmente as promessas de Deus na Bíblia par
 
 1. Abra o aplicativo no navegador do seu celular
 2. Adicione à tela inicial para acesso rápido como um app real
-3. Funciona offline após a primeira visita
+3. Uma única página: nada para instalar, nenhum dado coletado
 4. Use o botão flutuante (↑) para voltar ao topo rapidamente
 
 ## 📚 As 35 Categorias
@@ -84,8 +84,11 @@ Este aplicativo permite descobrir facilmente as promessas de Deus na Bíblia par
 
 ## 🌐 Versões Disponíveis
 
-- **Versão em português**: [promessas-biblicas](https://global-opera.github.io/promessas-biblicas/)
-- **Version française**: [promesses-bibliques](https://global-opera.github.io/promesses-bibliques/)
+- **Versão em português**: [promessas-biblicas](https://global-opera.github.io/promessas-biblicas/) (Bíblia Livre)
+- **Version française**: [promesses-bibliques](https://global-opera.github.io/promesses-bibliques/) (Louis Segond 1910)
+
+As duas versões saem de um mesmo gerador: mesmas seções, mesmos temas, mesmas
+referências. Só mudam a língua e a versão bíblica.
 
 ## 📧 Contato
 
@@ -94,7 +97,10 @@ Email: info@manialibris.com
 
 ## 📄 Licença
 
-Este projeto é de uso livre para edificação espiritual. Os textos bíblicos são de domínio público.
+Este projeto é de uso livre para edificação espiritual.
+
+Texto bíblico: **Bíblia Livre**, sob licença CC BY 3.0 BR — © Diego Santos,
+Mario Sérgio e Marco Teles. Texto reproduzido sem modificação.
 
 ---
 
